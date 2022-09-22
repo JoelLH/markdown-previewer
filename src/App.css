@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --editor-bg: #A491D3;
+  --preview-bg: #C5DCA0;
+  --section-text:'Roboto Mono', monospace;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body{
+  padding: 5% 0;
   min-height: 100vh;
+  background-color: rgb(253, 240, 241);
+}
+.container, section, #root{
+  min-height: 70vh;
+  flex-grow: 1;
+}
+h1,h2{
+  text-decoration: underline;
+}
+section{
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column;
+  
 }
+.section__header{
+  padding: 10px 15px;
+  gap: 10px;
 
-.App-link {
-  color: #61dafb;
 }
+#preview-header{ background-color: var(--preview-bg)}
+#editor-header{ background-color: var(--editor-bg)}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editor{
+  border: 2px solid var(--editor-bg)
+}
+.previewer-section{
+  border: 2px solid var(--preview-bg)
+}
+i{
+  font-size: 20px;
+}
+.previewer-section img{
+  max-width: 500px;
+}
+.section-content{
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+}
+#editor-section{
+
+}
+textarea{
+  width: 100%;
+  min-height: 100%;
+  border: none;
+  resize: none;
+  flex-grow: 1;
+  font-size: 20px;
+}
+textarea:focus{
+  outline: none;
+}
+.section-content, textarea{
+  font-family: var(--section-text);
+}
+#preview{
+  font-size: .8rem;
+}
+code{
+  background-color: rgb(239, 239, 239);
+}
+pre{
+  
+  background-color: rgb(239, 239, 239);
+}
+pre, code{
+  border-radius: 10px;
+  padding: 5px;
 }
